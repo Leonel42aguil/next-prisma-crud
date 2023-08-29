@@ -86,10 +86,19 @@ export default function NewPage({ params }) {
           <button
             className="bg-red-500 hover:bg-red-700 text-white font-bond py-2 px-4 rounded ml-4"
             type="button"
+            onClick={async () => {
+              const res = await fetch(`/api/tasks/${params.id}`, {
+                method: "DELETE"
+              })
+              const data = await res.json()
+              console.log(data);
+              router.refresh();
+              router.push("/")
+            }}
           >
             Delete
           </button>
-        )}
+        )} 
       </form>
     </div>
   );
