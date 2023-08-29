@@ -1,8 +1,14 @@
 "use client"
 
+import { useRouter } from "next/navigation"
+/**
+ * ! Para eso funciona el useRoute para cuando termina quiero que me redirija a otra pagina 
+ */
+
 export default function NewPage() {
-  
-  const onSubmit = async (e) => {
+  const router = useRouter()
+
+const onSubmit = async (e) => {
   e.preventDefault()
   const title = e.target.title.value
   const description = e.target.description.value
@@ -16,7 +22,10 @@ export default function NewPage() {
   })
     const data = await res.json()
    console.log(data);
+
+   router.push('/')
   }
+
   return (
     <div className="h-screen flex justify-center items-center">
       <form className="bg-slate-800 p-10" onSubmit={onSubmit}>
