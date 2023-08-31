@@ -91,9 +91,8 @@ export default function NewPage({ params }) {
                 method: "DELETE"
               })
               const data = await res.json()
-              console.log(data);
-              router.refresh();
               router.push("/")
+              router.refresh();
             }}
           >
             Delete
