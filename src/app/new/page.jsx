@@ -35,11 +35,11 @@ export default function NewPage({ params }) {
       console.log(data);
       alert('Editado con éxito'); // Cambia el mensaje de alerta para la edición
     } else {
-      const title = e.target.title.value;
+      const title = e.target.title.value; 
       const description = e.target.description.value;
       
       const res = await fetch("api/tasks", {
-        method: "POST",
+        method: "POST", 
         body: JSON.stringify({ title, description }),
         headers: {
           "Content-Type": "application/json",
