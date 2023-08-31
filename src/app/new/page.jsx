@@ -22,21 +22,22 @@ export default function NewPage({ params }) {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-
+    
     if (params.id) {
       const res = await fetch(`/api/tasks/${params.id}`, {
         method: "PUT",
         body: JSON.stringify({ title, description }),
         headers: {
-          "Content-Type": "application-json",
+          "Content-Type": "application/json", // Corrige "application-json" a "application/json"
         },
       });
       const data = await res.json();
       console.log(data);
+      alert('Editado con éxito'); // Cambia el mensaje de alerta para la edición
     } else {
       const title = e.target.title.value;
       const description = e.target.description.value;
-
+      
       const res = await fetch("api/tasks", {
         method: "POST",
         body: JSON.stringify({ title, description }),
@@ -45,10 +46,14 @@ export default function NewPage({ params }) {
         },
       });
       const data = await res.json();
+      console.log(data);
+      alert('Creado'); // Muestra un mensaje de alerta para la creación
     }
+    
     router.refresh();
     router.push("/");
   };
+  
 
   return (
     <div className="h-screen flex justify-center items-center">
@@ -93,6 +98,7 @@ export default function NewPage({ params }) {
               const data = await res.json()
               router.push("/")
               router.refresh();
+              alert('Borrado con éxito');
             }}
           >
             Delete

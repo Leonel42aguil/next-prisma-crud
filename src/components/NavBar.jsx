@@ -12,6 +12,7 @@ export default function NavBar() {
             <Link href="/new" className="text-slate-300 hover:text-slate-200">
               New
             </Link>
+              </li>
 
             <li className="text-slate-300 hover:text-slate-200">
               <Link
@@ -21,7 +22,6 @@ export default function NavBar() {
                 About
               </Link>
             </li>
-          </li>
         </ul>
       </div>
     </nav>
