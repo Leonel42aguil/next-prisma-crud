@@ -53,10 +53,19 @@ export default function NewPage({ params }) {
     router.refresh();
     router.push("/");
   };
-  
+
+  const volver = () => {
+    router.push('/');
+  };
 
   return (
     <div className="h-screen flex justify-center items-center">
+      <button
+        className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mt-4"
+        onClick={volver}
+      >
+        Volver
+      </button>
       <form className="bg-slate-800 p-10" onSubmit={onSubmit}>
         <label htmlFor="title" className="font-bold text-sm">
           Titulo de la tarea
