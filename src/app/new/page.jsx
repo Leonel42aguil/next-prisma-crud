@@ -101,7 +101,7 @@ export default function NewPage({ params }) {
               alert('Borrado con éxito');
             }}
           >
-            Delete
+            Eliminar 
           </button>
         )} 
       </form>

@@ -10,7 +10,7 @@ export default function NavBar() {
         <ul className="flex gap-x-2 text-lg font-bold">
           <li>
             <Link href="/new" className="text-slate-300 hover:text-slate-200">
-              New
+              Nuevo
             </Link>
               </li>
 
@@ -19,7 +19,7 @@ export default function NavBar() {
                 href="/about"
                 className="text-slate-300 hover:text-slate-200"
               >
-                About
+                Sobre mi
               </Link>
             </li>
         </ul>
